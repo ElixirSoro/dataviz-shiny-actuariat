@@ -1,0 +1,4 @@
+# Copier ce fichier en .Renviron et remplacer les valeurs.
+# Ne jamais publier le fichier .Renviron.
+APP_USER=votre_identifiant
+APP_PASSWORD=votre_mot_de_passe
