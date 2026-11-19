@@ -46,11 +46,17 @@ df <- read_excel("data/BASE_ETUDE.xlsx")
 # ------------------- #
 #   Credentials       #
 # ------------------- #
-# Identifiants lus dans les variables d'environnement (APP_USER, APP_PASSWORD).
-# Valeurs par défaut pour une démonstration locale uniquement.
+# Les identifiants ne sont JAMAIS écrits dans le code.
+# Ils sont lus dans les variables d'environnement APP_USER et APP_PASSWORD
+# (fichier .Renviron, non versionné : voir .Renviron.example).
+app_user <- Sys.getenv("APP_USER")
+app_password <- Sys.getenv("APP_PASSWORD")
+if (app_user == "" || app_password == "") {
+  stop("Définissez APP_USER et APP_PASSWORD dans un fichier .Renviron (voir .Renviron.example).")
+}
 credentials <- data.frame(
-  user = Sys.getenv("APP_USER", "demo"),
-  password = Sys.getenv("APP_PASSWORD", "demo"),
+  user = app_user,
+  password = app_password,
   stringsAsFactors = FALSE
 )
 

@@ -27,7 +27,7 @@ install.packages(c("shiny", "shinydashboard", "shinydashboardPlus", "shinymanage
 shiny::runApp()
 ```
 
-Identifiants de démonstration : `demo` / `demo`. Pour un déploiement, définir les variables d'environnement `APP_USER` et `APP_PASSWORD`.
+L'application est protégée par un écran de connexion. **Aucun identifiant n'est écrit dans le code** : avant de la lancer, copiez `.Renviron.example` en `.Renviron` et choisissez votre identifiant et votre mot de passe (`APP_USER`, `APP_PASSWORD`). Le fichier `.Renviron` est exclu du dépôt.
 
 ## Données
 
